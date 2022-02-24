@@ -1,1 +1,42 @@
 
+    body {
+background-color: #191D28;
+    }
+    
+    .table-text {
+        white-space: nowrap;
+        align-items: center;
+    }
+
+    .align-middle {
+vertical-align: middle!important;
+    }
+    .pointer {
+        cursor: pointer;
+    }
+
+    td{
+        color: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    th{
+        color: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .footer {
+        bottom: 0;
+        position: absolute;
+        padding: 13px;
+        width: 100%;
+    }
+    .footer-text {
+        color: #888686;
+        padding: 0px 12px 0px 0px;
+        height: 30px;
+
+    }
+    
+    
+
