@@ -12,9 +12,10 @@ exports.fetchDataandDisplay = async (req, res) => {
         const del=await Unit.deleteMany({});
         console.log("all data deleted....")
     } catch (error) {
-        console.log(error)
+      res.redirect('/error')
         
     }
+    
     // getting top 10 records and saving them in db
     for (const [key, value] of Object.entries(maindata)) {
       if (count < 10) {
@@ -28,7 +29,7 @@ exports.fetchDataandDisplay = async (req, res) => {
             base_unit: value.base_unit,
           });
         } catch (err) {
-          console.log(err);
+          res.redirect('/error')
         }
         count = count + 1;
       } else {
@@ -38,22 +39,29 @@ exports.fetchDataandDisplay = async (req, res) => {
 
     }
 
-    // once all records are added display them
-    res.redirect('/')
+    // once all records are added...find & display them
+    try {
+      const ans= await Unit.find()
+      res.render('home',{data:ans})
+      
+  } catch (err) {
+    res.redirect('/error')
+      
+  }
+  
 
-  } catch (err) {}
+  } catch (err) {
+    res.redirect('/error')
+  }
 };
 
 
-exports.displaydata=async(req,res)=>{
-    try {
-        const ans= await Unit.find()
-        res.render('home',{data:ans})
-        
-    } catch (err) {
-        console.log(err)
-        
-    }
+exports.handleError=async(req,res)=>{
+
+  // to show error msg to user
+  console.log("errr...")
+  res.redirect('/')
+
 
     
 }

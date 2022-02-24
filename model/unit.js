@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+// document schema with assignment specific fields
 const UnitSchema = new mongoose.Schema({
     name:{
         type: String,
