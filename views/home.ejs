@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Latest compiled and minified CSS -->
+
+
+    <style>
+        body {
+    background-color: #191D28;
+        }
+        
+        .table-text {
+            white-space: nowrap;
+            align-items: center;
+        }
+
+        .align-middle {
+    vertical-align: middle!important;
+        }
+        .pointer {
+            cursor: pointer;
+        }
+
+        td{
+            color: #fff;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        th{
+            color: #fff;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        #main{
+            padding-bottom: 47px;
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .flex-container {
+        display: flex;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <br>
+<div id="main">
+    <div class="app">
+        <!--top div -->
+        <div class="flex-container" id="top-div" style="padding: 20px 30px 0px;">
+            <div class="flex-container">
+                <div > <img src="https://hodlinfo.com/static/media/HODLINFO.8f78fc06.png" alt="" width="290" height="65">
+                </div>
+                <div >3 keys</div>
+                <div >reset logo</div>
+            </div>
+        </div>
+
+        <!--middle div -->
+        <div class="" id="middle-div">
+            <table class="table table-borderless text-center">
+                <thead>
+                  <tr>
+        
+                    <th><h4><span class="pointer">#</span></h4></th>
+                    <th><h4><span class="pointer">Name</span></h4></th>
+                    <th><h4><span class="pointer">Last</span></h4></th>
+                    <th><h4><span class="pointer">Buy/Sell Price</span></h4></th>
+                    <th><h4><span class="pointer">Volume</span></h4></th>
+                    <th><h4><span class="pointer">Base Unit</span></h4></th>
+        
+                  </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((data,index)=>{ %>
+                        <tr>
+        
+                            <td class="align-middle"><h4 class="table-text"><span><%= index + 1  %></span></h4></td>
+                            <td class="align-middle"><h4 class="table-text"><span><%= data.name %></span></h4></td>
+                            <td class="align-middle"><h4 class="table-text"><span>₹ <%= parseInt(data.last).toLocaleString('en-US') %></span></h4></td>
+                            <td class="align-middle"><h4 class="table-text"><span>₹ <%= parseInt(data.buy).toLocaleString('en-US') %> / ₹ <%= parseInt(data.sell).toLocaleString('en-US') %> </h4></td>
+                            <td class="align-middle"><h4 class="table-text"><span><%= data.volume %></span></h4></td>
+                            <td class="align-middle"><h4 class="table-text"><span><%= data.base_unit %></span></h4></td>
+                            
+                          </tr>
+        
+                    <% }) %> 
+        
+                </tbody>
+              </table>
+        </div>
+
+
+        <!--bottom div -->
+        <div id="bottom-div">
+            <div>Copyright</div>
+            <div>Hodlinfo.com</div>
+            <div>Deveoped by Quadbtech</div>
+            <div>Support</div>
+        </div>
+       
+    </div>
+    
+</div>
+
+
+</body>
+</html>
